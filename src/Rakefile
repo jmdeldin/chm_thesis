@@ -24,6 +24,6 @@ end
 
 desc "Compile and view #{OUTPUT}"
 task :debug => [OUTPUT] do
-    sh "open #{OUTPUT}"
+  sh "open #{OUTPUT}"
 end
 
