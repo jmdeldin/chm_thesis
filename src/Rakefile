@@ -1,0 +1,29 @@
+require 'rake/clean'
+
+SRC = 'thesis'
+BUILD_DIR = 'build'
+OUTPUT = "#{BUILD_DIR}/#{SRC}.pdf"
+
+CLEAN.include("#{BUILD_DIR}/*.log", "#{BUILD_DIR}/*.aux")
+CLOBBER.include("#{BUILD_DIR}/*")
+
+task :default => OUTPUT
+
+file OUTPUT => [:once] do
+  sh "bibtex --terse #{BUILD_DIR}/#{SRC}"
+  # because the TOC and refs won't be complete:
+  (1..2).each do
+    Rake::Task['once'].execute
+  end
+end
+
+desc "Compile the document once"
+task :once do
+  sh "xelatex --output-directory=#{BUILD_DIR} #{SRC}"
+end
+
+desc "Compile and view #{OUTPUT}"
+task :debug => [OUTPUT] do
+    sh "open #{OUTPUT}"
+end
+
