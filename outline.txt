@@ -1,11 +1,15 @@
-Scleroderma
+Systemic sclerosis
 
 Introduction:
     - background
     - autoimmune diseases
-Pathogenesis:
+Definition and classification:
 Clinical manifestations:
-Treatment:
+    - Diagnosis/initial presentations:
+        - Raynaud's
+    - Localized scleroderma
+Pathogenesis:
+Therapy:
 Conclusion:
 Appendix:
 References:
