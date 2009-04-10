@@ -1,16 +1,29 @@
 \documentclass[12pt]{report}
 
-% design
 \usepackage{fullpage}
+\usepackage{setspace}
+
+% XeTeX/fontspec settings
 \usepackage[mathcal]{euler}
 \usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
 \defaultfontfeatures{Scale=MatchLowercase}
-\setmainfont[Mapping=tex-text]{Minion Pro}
+\setmainfont[Mapping=tex-text]{Adobe Caslon Pro}
+\setsansfont[Mapping=tex-text]{Helvetica Neue Bold}
+\setmonofont{Monaco}
+
+% section headings
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+% disable sec#s
+\setcounter{secnumdepth}{0}
 
 % bibliography
 \usepackage{natbib}
 
-% title page
+% meta
 \title{Systemic sclerosis}
 \author{Jon-Michael Deldin\\
     Advisor: Dr. S. Diane Lund\\
@@ -19,16 +32,24 @@
 \date{Spring 2009}
 
 \begin{document}
+    \maketitle
 
-\maketitle
+    \tableofcontents
+    \newpage
 
-\tableofcontents
-\newpage
+    % single-spacing only
+    \frenchspacing
+    % FIXME: uncomment for final draft
+    %\doublespacing
 
+    \input{introduction}
+    %\input{manifestations}
+    %\input{pathogenesis}
+    %\input{treatment}
+    %\input{conclusion}
 
-% bib
-\bibliographystyle{plain}
-\bibliography{refs/refs}
-
+    % bib
+    \bibliographystyle{plain}
+    \bibliography{refs/refs}
 \end{document}
 
