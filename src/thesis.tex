@@ -18,10 +18,9 @@
 \allsectionsfont{\sffamily}
 
 % disable sec#s
-\setcounter{secnumdepth}{0}
 
 % bibliography
-\usepackage{natbib}
+\usepackage[longnamesfirst]{natbib}
 
 % meta
 \title{Systemic sclerosis}
@@ -30,6 +29,12 @@
     University of Great Falls
 }
 \date{Spring 2009}
+
+
+% constants
+\newcommand{\SSc}{Systemic sclerosis }
+\newcommand{\ssc}{systemic sclerosis }
+\newcommand{\RP}{Raynaud phenomenon }
 
 \begin{document}
     \maketitle
@@ -44,12 +49,13 @@
 
     \input{introduction}
     %\input{manifestations}
+    \input{diagnosis}
     %\input{pathogenesis}
     %\input{treatment}
     %\input{conclusion}
 
     % bib
-    \bibliographystyle{plain}
+    \bibliographystyle{refs/mla-good}
     \bibliography{refs/refs}
 \end{document}
 
