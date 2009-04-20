@@ -7,12 +7,8 @@ SRC   := thesis
 # Output filename
 OUT   := $(shell date "+%Y-%m-%d")_$(SRC).pdf
 
-# PDF viewer
-VIEWER = open
-# If grepping `uname` for "Linux" isn't blank, use evince
-ifneq ($(strip $(shell uname|grep Linux)),)
-    VIEWER = evince
-endif
+# PDF viewer (`evince` for Linux, `open` for OS X)
+VIEW  := $(if $(shell uname|grep Linux), evince, open)
 
 # Compiles a TeX file
 define mkpdf
@@ -33,7 +29,7 @@ $(OUT):
 
 # Open the PDF as a background process
 debug: all
-	$(VIEWER) $(OUT)&
+	$(VIEW) $(OUT)&
 
 # Remove all generated-build files
 clean:
