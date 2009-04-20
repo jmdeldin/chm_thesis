@@ -1,3 +1,6 @@
 A literature review on scleroderma for my B.A. in Chemistry thesis at the
 University of Great Falls.
 
+Editing with Vim (in src/):
+    [g|m]vim -c 'so .vimrc thesis.tex'
+
