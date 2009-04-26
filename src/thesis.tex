@@ -17,8 +17,6 @@
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
 
-% disable sec#s
-
 % bibliography
 \usepackage[longnamesfirst]{natbib}
 
@@ -32,9 +30,11 @@
 
 
 % constants
-\newcommand{\SSc}{Systemic sclerosis }
-\newcommand{\ssc}{systemic sclerosis }
-\newcommand{\RP}{Raynaud phenomenon }
+\newcommand{\SSc}{Systemic sclerosis}
+\newcommand{\ssc}{systemic sclerosis}
+\newcommand{\Rp}{Raynaud phenomenon}
+\newcommand{\lcSSc}{limited cutaneous \ssc}
+\newcommand{\dcSSc}{diffuse cutaneous \ssc}
 
 \begin{document}
     \maketitle
@@ -48,7 +48,8 @@
     %\doublespacing
 
     \input{introduction}
-    %\input{manifestations}
+    %\input{subtypes}
+    \input{manifestations}
     \input{diagnosis}
     %\input{pathogenesis}
     %\input{treatment}
