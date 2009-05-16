@@ -5,7 +5,7 @@ TEX   := xelatex
 SRC   := thesis
 
 # Output filename
-OUT   := $(shell date "+%Y-%m-%d")_$(SRC).pdf
+OUT   := build/$(shell date "+%Y-%m-%d")_$(SRC).pdf
 
 # PDF viewer (`evince` for Linux, `open` for OS X)
 VIEW  := $(if $(shell uname|grep Linux), evince, open)
@@ -15,7 +15,7 @@ define mkpdf
 	$(TEX) $(SRC)
 endef
 
-all: $(OUT)
+all: clobber $(OUT)
 	bibtex --terse $(SRC)
 	# compile twice to complete the TOC and refs 
 	for i in {1..2}; do\
@@ -37,5 +37,5 @@ clean:
 
 # Remove the PDF
 clobber: clean
-	rm -f *.pdf
+	rm -f $(OUT)
 

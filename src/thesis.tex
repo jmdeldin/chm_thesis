@@ -3,6 +3,9 @@
 % bibliography
 \usepackage[longnamesfirst]{natbib}
 
+% BibTeX hates long URLs
+\usepackage{url}
+
 % meta
 \title{Systemic sclerosis}
 \author{Jon-Michael Deldin\\
@@ -11,17 +14,16 @@
 }
 \date{Spring 2009}
 
-
-% constants
-\newcommand{\SSc}{Systemic sclerosis}
-\newcommand{\ssc}{systemic sclerosis}
-\newcommand{\Rp}{Raynaud phenomenon}
-\newcommand{\lcSSc}{limited cutaneous \ssc}
-\newcommand{\dcSSc}{diffuse cutaneous \ssc}
+% abbreviations
+\usepackage{abbrevs}
+\newabbrev{\SSc}   {Systemic sclerosis}
+\newabbrev{\ssc}   {systemic sclerosis}
+\newabbrev{\Rp}    {Raynaud phenomenon}
+\newabbrev{\lcSSc} {limited cutaneous systemic sclerosis}
+\newabbrev{\dcSSc} {diffuse cutaneous systemic sclerosis}
 
 \begin{document}
     \maketitle
-
     \tableofcontents
     \newpage
 
@@ -29,12 +31,12 @@
     \frenchspacing
 
     \input{introduction}
-    %\input{subtypes}
+    \input{subtypes}
     \input{manifestations}
     \input{diagnosis}
-    %\input{pathogenesis}
-    %\input{treatment}
-    %\input{conclusion}
+    \input{pathogenesis}
+    \input{treatment}
+    \input{conclusion}
 
     % bib
     \bibliographystyle{refs/mla-good}
